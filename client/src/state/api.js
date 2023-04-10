@@ -6,7 +6,8 @@ export const api = createApi({
     reducerPath: "adminApi", //===> name of the slice
     tagTypes: [
       "User",
-      "Products"],  //==> States with which you can identify the user
+      "Products",
+      "Customers"],  //==> States with which you can identify the user
     endpoints: (build) => ({ //==> callback function , tha main logic for the API
         getUser: build.query({ //==>this will used to grab the user data
           query: (id) => `general/user/${id}`, //==> this is the route
@@ -16,10 +17,15 @@ export const api = createApi({
           query: () => "client/products",
           providesTags: ["Products"],
         }),
+        getCustomers: build.query({
+          query: () => "client/customers",
+          providesTags: ["Customers"],
+        }),
     }),
 
 });
 
 export const {
     useGetUserQuery,
-    useGetProductsQuery} = api
+    useGetProductsQuery,
+    useGetCustomersQuery} = api

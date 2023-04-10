@@ -24,3 +24,13 @@ export const getProducts = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+
+export const getCustomers = async (req, res) => {
+  try {
+    const customers = await User.find({ role: "user" }).select("-password"); // dont include passowrd to front end
+    res.status(200).json(customers);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
