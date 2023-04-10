@@ -7,7 +7,8 @@ export const api = createApi({
     tagTypes: [
       "User",
       "Products",
-      "Customers"],  //==> States with which you can identify the user
+      "Customers",
+      "Transactions"],  //==> States with which you can identify the user
     endpoints: (build) => ({ //==> callback function , tha main logic for the API
         getUser: build.query({ //==>this will used to grab the user data
           query: (id) => `general/user/${id}`, //==> this is the route
@@ -21,6 +22,14 @@ export const api = createApi({
           query: () => "client/customers",
           providesTags: ["Customers"],
         }),
+        getTransactions: build.query({
+          query: ({ page, pageSize, sort, search }) => ({
+            url: "client/transactions",
+            method: "GET",
+            params: { page, pageSize, sort, search },
+          }),
+          providesTags: ["Transactions"],
+        }),
     }),
 
 });
@@ -28,4 +37,5 @@ export const api = createApi({
 export const {
     useGetUserQuery,
     useGetProductsQuery,
-    useGetCustomersQuery} = api
+    useGetCustomersQuery,
+    useGetTransactionsQuery} = api
