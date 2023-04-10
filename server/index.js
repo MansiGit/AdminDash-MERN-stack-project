@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import clientRoutes from "./routes/client.js"
-import salesRoutes from "./routes/client.js"
+import salesRoutes from "./routes/sales.js"
 import managementRoutes from "./routes/management.js"
 import generalRoutes from "./routes/general.js"
 
@@ -15,6 +15,7 @@ import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
+import OverallStat from "./models/OverallStat.js";
 
 import {
     dataUser,
@@ -50,10 +51,13 @@ mongoose.connect(process.env.MONGO_URL, {
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     /* ONLY ADD DATA ONE TIME */
+
     //User.insertMany(dataUser)
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
     //Transaction.insertMany(dataTransaction);
+    //OverallStat.insertMany(dataOverallStat);
+    
 
 }).catch((error) => console.log(`${error} did not connect`));
 
