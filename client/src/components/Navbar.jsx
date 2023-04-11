@@ -69,7 +69,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
           </IconButton>
-          <IconButton>
+          <IconButton component="a" href="https://github.com/MansiGit/ecom-dash-MERN-stack-project">
             <SettingsOutlined sx={{ fontSize: "25px" }} />
           </IconButton>
 
@@ -118,7 +118,10 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              <MenuItem onClick={() => {
+      handleClose();
+      window.open('https://github.com/MansiGit', '_blank'); // set the URL of the current window to the desired destination
+    }}>Visit Profile</MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>

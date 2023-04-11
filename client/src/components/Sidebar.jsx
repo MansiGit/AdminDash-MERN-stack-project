@@ -192,7 +192,7 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-
+        <a  href="https://github.com/MansiGit">
           <Box position="absolute" bottom="2rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
@@ -219,8 +219,8 @@ const Sidebar = ({
                 >
                   {user.occupation}
                 </Typography>
-              </Box>
-              <SettingsOutlined
+              </Box> 
+              <SettingsOutlined 
                 sx={{
                   color: theme.palette.secondary[300],
                   fontSize: "25px ",
@@ -228,7 +228,7 @@ const Sidebar = ({
               />
             </FlexBetween>
           </Box>
-
+        </a>
         </Drawer>
       )}
     </Box>
