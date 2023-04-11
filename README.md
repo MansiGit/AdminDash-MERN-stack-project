@@ -20,9 +20,9 @@ This is a full stack dashboard project developed for E-COM Admins. It helps admi
 - Mongoose for managing mongoDB
 
 ## Project Initialization
-
+**For Backend**
 ```powershell
-npm i express body-parser cors dotenv helmet morgan mongoose nodemo
+npm i express body-parser cors dotenv helmet morgan mongoose nodemon
 ```
 
 - body parser for parsing our data coming in cores for cross-origin resource sharing
@@ -32,6 +32,10 @@ npm i express body-parser cors dotenv helmet morgan mongoose nodemo
 - Our API calls Mongoose for handling mongodb calls and
 - Nodemon for live server reload
 
+**For Frontend:**
+```powershell
+npm i react-redux @reduxjs/toolkit react-datepicker react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/geo @nivo/pie
+```
 ## Backend Configuration and Setup 
 
 We will be splitting the APIs based on the sidebar navigation. So, make routes as per the user navigation:
