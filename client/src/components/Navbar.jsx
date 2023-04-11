@@ -23,6 +23,7 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import Tooltip from '@mui/material/Tooltip';
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
@@ -69,10 +70,11 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
           </IconButton>
-          <IconButton component="a" href="https://github.com/MansiGit/ecom-dash-MERN-stack-project">
-            <SettingsOutlined sx={{ fontSize: "25px" }} />
-          </IconButton>
-
+          <Tooltip title="Visit GitHub Repository">
+            <IconButton component="a" href="https://github.com/MansiGit/ecom-dash-MERN-stack-project" target="_blank">
+              <SettingsOutlined sx={{ fontSize: "25px" }} />
+            </IconButton>
+          </Tooltip>
           <FlexBetween>
             <Button
               onClick={handleClick}
