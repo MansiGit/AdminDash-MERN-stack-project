@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mui/material": "^5.11.16",
     "react-datepicker": "^4.8.0"
   }
 }
