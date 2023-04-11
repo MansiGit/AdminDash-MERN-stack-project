@@ -38,7 +38,7 @@ const Product = ({
       <CardContent>
         <Typography
           sx={{ fontSize: 14 }}
-          color={theme.palette.secondary[700]}
+          color={theme.palette.secondary[300]}
           gutterBottom
         >
           {category}
@@ -74,10 +74,10 @@ const Product = ({
           <Typography>id: {_id}</Typography>
           <Typography>Supply Left: {supply}</Typography>
           <Typography>
-            Yearly Sales This Year: {stat.yearlySalesTotal}
+            Yearly Sales This Year: {stat[0].yearlySalesTotal}
           </Typography>
           <Typography>
-            Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
+            Yearly Units Sold This Year: {stat[0].yearlyTotalSoldUnits}
           </Typography>
         </CardContent>
       </Collapse>
@@ -87,6 +87,7 @@ const Product = ({
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
+  //console.log(data);
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
@@ -100,8 +101,8 @@ const Products = () => {
           justifyContent="space-between"
           rowGap="20px"
           columnGap="1.33%"
-          sx={{     
-            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, //makes it responsive. Immediate div. if it is not a mobile then undefines else span the whole screen when on mobile
+          sx={{
+            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
           }}
         >
           {data.map(
@@ -130,7 +131,7 @@ const Products = () => {
           )}
         </Box>
       ) : (
-        <>Loading...</> //if data is not loaded, then display ...loading
+        <>Loading...</>
       )}
     </Box>
   );
