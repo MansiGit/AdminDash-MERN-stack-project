@@ -1,4 +1,6 @@
 # Ecom Dash MERN stack project
+**Check out the dashboard : https://ecom-dash-mern-stack.onrender.com/**
+
 ![dash](https://user-images.githubusercontent.com/31558571/231217267-cf3d99a3-042a-4e68-89ee-0d31dbac6dda.png)
 # Introduction 
 This is a full stack dashboard project developed for E-COM Admins. It helps admins keep a track of Product Inventory, Sales, Transactions and also study the trends of sales and products. The front end is built using React, Material UI, and Redux-toolkit. The backend has been built using Node, Express, and MongoDB. 
@@ -66,3 +68,8 @@ Use Lucidchart for making the ER Diagram [https://lucid.app/](https://lucid.app/
 
 ### Sales Breakdown Page
 - Nivo charts ⇒ ResponsivePie , Tooltips
+
+## Scope for new features!
+- Login/Logout functionality
+- User management (admins/superadmins)
+- Implementing site search
